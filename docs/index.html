@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <title>Marketplace</title>
+
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+
+    <link rel='stylesheet' href='css/pure-min.css'>
+    <link rel='stylesheet' href='css/index.css'>
+  </head>
+
+  <body>
+    <header>
+      <div class='first-row'>
+        <div class='title'>
+          <h1><a href='index.html'>Marketplace</a></h1>
+          <h2>Running on DERO-DVM</h2>
+        </div>
+
+        <div class='toggle-dropdown' onclick='toggleDropdown();'>&#9776;</div>
+      </div>
+
+      <h5><span class='scid-label'>SCID:</span> <a href='#' target='_blank' id='scid-link'>none</a> <button class='pure-button button-secondary disconnect' onclick='onDisconnection();'>Disconnect</button></h5></h5>
+      
+      <div id='dropdown-menu'>
+        <h1>Menu</h1>
+        <ul>
+          <li><a data-page='Market' data-params='{"page": 1}' onclick='onPageClick(event);'>Market</a></li>
+          <li><a data-page='BuyerOrders' data-params='{"page": 1}' onclick='onPageClick(event);'>My orders</a></li>
+          <br>
+          <h5>Buyer</h5>
+          <li><a data-page='SetContactInfo' onclick='onPageClick(event);'>Set contact info</a></li>
+          <br>
+          <h5>Seller</h5>
+          <li><a data-page='AddProduct' onclick='onPageClick(event);'>Add product</a></li>
+          <li><a data-page='SellerProducts' data-params='{"page": 1}' onclick='onPageClick(event);'>My products</a></li>
+          <li><a data-page='SellerOrders' data-params='{"page": 1}' onclick='onPageClick(event);'>Orders</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div id='loading'>
+      <h1>Loading...</h1>
+    </div>
+
+    <div id='error-popup'>
+      <div id='close-error' onclick='hideErrors();'>x</div>
+    </div>
+
+    <div class='page' id='ConnectionPage'>
+      <div class='title'>
+        <h1>Marketplace</h1>
+        <h2>Running on DERO-DVM</h2>
+      </div>
+
+      <form class='pure-form pure-form-aligned' id='connection-form' onsubmit='onConnection(event);'>
+        <fieldset>
+          <div class='pure-control-group'>
+            <label for='scid'>SCID</label>
+            <input type='text' name='scid' required>
+          </div>
+
+          <div class='pure-control-group'>
+            <label for='daemon'>Daemon RPC Port</label>
+            <input type='number' name='daemon' required>
+          </div>
+
+          <div class='pure-control-group'>
+            <label for='daemon'>Wallet RPC Port</label>
+            <input type='number' name='wallet' required>
+          </div>
+
+          <div class='pure-control-group'>
+            <label for='address'>Wallet DERO Address</label>
+            <input type='text' name='address' placeholder='Wallet Address' required>
+          </div>
+
+          <div class='pure-controls'>
+            <button type='submit' class='pure-button pure-button-primary'>Explore Marketplace</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class='page' id='MarketPage'>
+      <h1 class='page-title'><a data-page='Market' data-params='{"page": 1}' onclick='onPageClick(event);'>Products</a></h1>
+      
+      <form class='pure-form' id='limit-form' onsubmit='applyLimit(event);' data-page='Market'>
+        <fieldset>
+          <label for='limit'>Items per page</label>
+          <input type='number' name='limit' class='limit-input' min=1>
+    
+          <button type='submit' class='pure-button pure-button-primary'>Apply</button>
+        </fieldset>
+      </form>
+
+      <div class='products'></div>
+
+      <div class='navigation'>
+        <div class='arrow prev' onclick='prevPage(event)' data-pagename='Market'>←</div>
+        <p>Page <span class='current-page-number'>0</span> of <span class='pages-count'>0</span></p>
+        <div class='arrow next' onclick='nextPage(event)' data-pagename='Market'>→</div>
+      </div>
+    </div>
+
+    <div class='page' id='BuyerOrdersPage'>
+      <h1 class='page-title'><a data-page='BuyerOrders' data-params='{"page": 1}' onclick='onPageClick(event);'>My orders</a></h1>
+      <h5 class='address'>Address: <span class='dero-address'></span></h5>
+
+      <form class='pure-form' id='limit-form' onsubmit='applyLimit(event);' data-page='BuyerOrders'>
+        <fieldset>
+          <label for='limit'>Items per page</label>
+          <input type='number' name='limit' class='limit-input' min=1>
+
+          <button type='submit' class='pure-button pure-button-primary'>Apply</button>
+        </fieldset>
+      </form>
+
+      <div class='orders'></div>
+
+      <div class='navigation'>
+        <div class='arrow prev' onclick='prevPage(event);' data-pagename='BuyerOrders'>←</div>
+        <p>Page <span class='current-page-number'>0</span> of <span class='pages-count'>0</span></p>
+        <div class='arrow next' onclick='nextPage(event);' data-pagename='BuyerOrders'>→</div>
+      </div>
+    </div>
+
+    <div class='page' id='SetContactInfoPage'>
+      <h1 class='page-title'><a data-page='SetContactInfo' onclick='onPageClick(event);'>Set Contact Info</a></h1>
+      <h5 class='address'>Address: <span class='dero-address'></span></h5>
+
+      <div class='page-body'>
+        <form class='pure-form' onsubmit='setContactInfo(event);'>
+          <fieldset>
+            <label for='contact-info'>Contact info</label>
+            <input type='text' name='contact-info' required>
+          
+            <button type='submit' class='pure-button pure-button-primary'>Submit</button>
+          </fieldset>
+        </form>
+
+        <div class='command-section'>
+          <p>Execute this command to set your contact info: <code></code></p>
+        </div>
+
+        <p><b>NB:</b> Contact info will be used by buyers and sellers to communicate (i.e. provide physical address for the shipment of products). Bear in mind that, since data stored in a SC is public, contact info should be something anonymous such as a <i>ProtonMail</i> address or a <i>Wickr</i> username.</p>
+      </div>
+    </div>
+
+    <div class='page' id='AddProductPage'>
+      <h1 class='page-title'><a data-page='AddProduct' onclick='onPageClick(event);'>Add product</a></h1>
+
+      <div class='page-body'>
+        <form class='pure-form pure-form-aligned' onsubmit='addProduct(event);'>
+          <fieldset>
+            <div class='pure-control-group'>
+              <label for='name'>Name</label>
+              <input type='text' name='name' placeholder='Name' required>
+            </div>
+
+            <div class='pure-control-group'>
+              <label for='description'>Description</label>
+              <input type='text' name='description' placeholder='Description' required>
+            </div>
+
+            <div class='pure-control-group'>
+              <label for='price'>Price</label>
+              <input type='number' name='price' placeholder='Price' required step='0.000000000001' value='0.000000000001' min='0.000000000001'> DERO
+            </div>
+
+            <div class='pure-control-group'>
+              <label for='amount'>Amount</label>
+              <input type='number' name='amount' placeholder='Amount' required min=1 value='1'>
+            </div>
+
+            <div class='pure-controls'>
+              <button type='submit' class='pure-button pure-button-primary'>Submit</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class='command-section'>
+          <p>Execute this command to add this product to the market: <code></code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class='page' id='SellerProductsPage'>
+      <h1 class='page-title'><a data-page='SellerProducts' data-params='{"page": 1}' onclick='onPageClick(event);'>My products</a></h1>
+      <h5 class='address'>Address: <span class='dero-address'></span></h5>
+
+      <form class='pure-form' id='limit-form' onsubmit='applyLimit(event);' data-page='SellerProducts'>
+        <fieldset>
+          <label for='limit'>Items per page</label>
+          <input type='number' name='limit' class='limit-input' min=1>
+
+          <button type='submit' class='pure-button pure-button-primary'>Apply</button>
+        </fieldset>
+      </form>
+
+      <div class='products'></div>
+
+      <div class='navigation'>
+        <div class='arrow prev' onclick='prevPage(event);' data-pagename='SellerProducts'>←</div>
+        <p>Page <span class='current-page-number'>0</span> of <span class='pages-count'>0</span></p>
+        <div class='arrow next' onclick='nextPage(event);' data-pagename='SellerProducts'>→</div>
+      </div>
+    </div>
+
+    <div class='page' id='SellerOrdersPage'>
+      <h1 class='page-title'><a data-page='SellerOrders' data-params='{"page": 1}' onclick='onPageClick(event);'>Orders</a></h1>
+      <h5 class='address'>Address: <span class='dero-address'></span></h5>
+
+      <form class='pure-form' id='limit-form' onsubmit='applyLimit(event);' data-page='SellerOrders'>
+        <fieldset>
+          <label for='limit'>Items per page</label>
+          <input type='number' name='limit' class='limit-input' min=1>
+
+          <button type='submit' class='pure-button pure-button-primary'>Apply</button>
+        </fieldset>
+      </form>
+
+      <div class='orders'></div>
+
+      <div class='navigation'>
+        <div class='arrow prev' onclick='prevPage(event);' data-pagename='SellerOrders'>←</div>
+        <p>Page <span class='current-page-number'>0</span> of <span class='pages-count'>0</span></p>
+        <div class='arrow next' onclick='nextPage(event);' data-pagename='SellerOrders'>→</div>
+      </div>
+    </div>
+
+    <noscript>JavaScript needs to be enabled in order to properly use this website.</noscript>
+    <script src='index.js'></script>
+  </body>
+</html>

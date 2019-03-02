@@ -1,0 +1,30 @@
+USER<address>
+  _ContactInfo       - String
+  _PositiveFeedback  - Uint64
+  _NegativeFeedback  - Uint64
+
+PRODUCT<id>
+  _Name        - String
+  _Description - String
+  _Price       - Uint64
+  _Amount      - Uint64
+  _Seller      - String
+
+ORDER<id>
+  _ProductID          - Uint64
+  _ProductAmount      - Uint64
+  _TotalCost          - Uint64
+  _Buyer              - String
+  _Seller             - String
+  _FulfilledBySeller  - Uint64
+  _CanceledBy         - String
+  _CancelReason       - String
+  _Error              - String
+  _ReviewID           - Uint64
+
+REVIEW<id>
+  _OrderID        - Uint64
+  _Seller         - String
+  _Author         - String
+  _BuyerSatisfied - Uint64
+  _BuyerComment   - String
