@@ -43,7 +43,7 @@ It's not going to be neither the best looking frontend, nor the most well coded 
 
 ### How to run
 
-1. Download the _frontend_ folder from this repository
+1. Download the _frontend_ folder from this repository.
 2. Make sure daemon and wallet are running and synced.
 3. Open your web browser with web security disabled. This is needed in order to bypass a CORS issue with the daemon's JSON RPC server (thanks to [plspro](https://github.com/plrspro) for providing this quick fix). Example (Chrome on Ubuntu):
    
