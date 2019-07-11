@@ -1,9 +1,13 @@
 /*
   Marketplace Smart Contract in DVM-BASIC
   Version: 0.1
+  Development date: Q1 2019 for the DERO Stargate Testnet v3.0.4-0
   Author: Peppinux
+  License: MIT
 
-  Built for the Dero Smart Contract build competition
+  Built for the Dero Smart Contract build competition.
+  DISCLAIMER: This software was only developed for and tested by the author on the blockchain testnet in Q1 2019 for the competition.
+              The author does not condone, neither is he responsible for any illicit use of this open source software (or any fork of it) on the blockchain mainnet.
 */
 
 Function Initialize() Uint64
