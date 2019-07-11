@@ -52,30 +52,40 @@ It's not going to be neither the best looking frontend, nor the most well coded 
 
 Tested on the latest version of Chrome and Firefox. If you're using a older browser and running into compatibility issues, you may need to pass the js file through [BabelJS](https://babeljs.io/repl) and the css file through a [prefixer](https://autoprefixer.github.io/).
 
-### Screenshots
+## Thanks to
 
-Connection
+* [Captain](https://twitter.com/deroproject) and the rest of the developers for building the [DERO](https://dero.io/) blockchain and making the competition possible.
+* DERO Foundation members [Dank](https://twitter.com/danktr0n), [Joshy](https://twitter.com/notoriousjoshyb) and [Kryptoid](https://twitter.com/elkryptoid).
+* [Slixe](https://github.com/Slixe/), [Nelbert442](https://github.com/Nelbert442), [plspro](https://github.com/plrspro), [LifeTyper](https://github.com/lifetyper), hazet36, ZoZ and every other member of the [DERO community](https://discord.gg/H95TJDp) for always being active and helpful.
+
+## Donations
+__DERO__: dERiY64hDfghSaUCRJN6HuFpfuaQKnPftTfXoBbi7CaLVTFCGdYrPN5iZTWNcqiZkbEVqaGduHt6C2CagHV2SPQdeUeDKueYirQhGykNLZwrug5FHzP2sSFcngdwaxGrX2Ne5GjGc8xrBt
+
+__XMR__: 46LugwCgmfMd9puoXiRzfobaFPHr1do78d6rbxkT32bo2cHX8vu2YRpVnQbyE7LQXzeZLVYmpv2jsQvFs6QirBoAJ4fXEGM
+
+__BTC__: 18RUHsdW3pC9NSJ9g2HeYvNRhbAqyGoeM6
+
+__ETH__: 0x80C5540a865740495AF4569954459E1Bf4EF0dB4
+
+## Frontend Screenshots
+
+### Connection
 ![Connection](./frontend_screenshots/Connection.png)
 
-Market
+### Market
 ![Market](./frontend_screenshots/Market.png)
 
-Buyer Orders
+### Buyer Orders
 ![Buyer Orders](./frontend_screenshots/BuyerOrders.png)
 
-Set Contact Info
+### Set Contact Info
 ![Set Contact Info](./frontend_screenshots/SetContactInfo.png)
 
-Add Product
+### Add Product
 ![Add Product](./frontend_screenshots/AddProduct.png)
 
-Seller Products
+### Seller Products
 ![Seller Products](./frontend_screenshots/SellerProducts.png)
 
-Seller Orders
+### Seller Orders
 ![Seller Orders](./frontend_screenshots/SellerOrders.png)
-
-# Thanks to
-
-* [Captain](https://twitter.com/deroproject), [Dank](https://twitter.com/danktr0n) and the rest of the team and staff for building the [DERO](https://dero.io/) blockchain and making the competition possible.
-* [Slixe](https://github.com/Slixe/), [Nelbert442](https://github.com/Nelbert442), [plspro](https://github.com/plrspro), [LifeTyper](https://github.com/lifetyper), hazet36, ZoZ, kryptoid, Joshy and every other member of the [DERO community](https://discord.gg/H95TJDp) for always being active and helpful.
