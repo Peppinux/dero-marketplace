@@ -1,7 +1,9 @@
 # DERO Marketplace Smart Contract
 
 >Built for the **[Dero Smart Contract build competition](https://forum.dero.io/t/dero-smart-contract-build-competition/891)**
+
 >**[Winner of the 2nd place](https://medium.com/deroproject/dero-monthly-update-f6ec1436431d)**
+
 >**Testnet SCID**: 096d2403eeb2a7853545b8cda3d6583e57af99a60613cdfd30b8d8291050cf12
 
 Fully functional yet simple marketplace where users can buy and sell goods without the need of a centralized e-commerce platform.
