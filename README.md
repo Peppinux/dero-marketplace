@@ -4,11 +4,14 @@
 
 >**[Winner of the 2nd place](https://medium.com/deroproject/dero-monthly-update-f6ec1436431d)**
 
->**Testnet SCID**: 096d2403eeb2a7853545b8cda3d6583e57af99a60613cdfd30b8d8291050cf12
-
 Fully functional yet simple marketplace where users can buy and sell goods without the need of a centralized e-commerce platform.
+Made in DERO-BASIC, running on the DERO-DVM.
 
-Made in DERO-BASIC, running on the **DERO-DVM**.
+| :zap: This smart contract was developed back in 2019 for the DERO Stargate RC1 testnet and will not be suitable for the latest release of the platform. A new, more advanced, up to date project to replace this SC will be developed. |
+|-----------------------------------------|
+
+## Donations
+**DERO**: dERoWuoU8wthSaUCRJN6HuFpfuaQKnPftTfXoBbi7CaLVTFCGdYrPN5iZTWNcqiZkbEVqaGduHt6C2CagHV2SPQd9VU1UknF1N
 
 ## Schema
 
@@ -54,21 +57,6 @@ It's not going to be neither the best looking frontend, nor the most well coded 
 4. Open index.html with your browser.
 
 Tested on the latest version of Chrome and Firefox. If you're using a older browser and running into compatibility issues, you may need to pass the js file through [BabelJS](https://babeljs.io/repl) and the css file through a [prefixer](https://autoprefixer.github.io/).
-
-## Thanks to
-
-* [Captain](https://twitter.com/deroproject) and the rest of the developers for building the [DERO](https://dero.io/) blockchain and making the competition possible.
-* DERO Foundation members [Dank](https://twitter.com/danktr0n), [Joshy](https://twitter.com/notoriousjoshyb) and [Kryptoid](https://twitter.com/elkryptoid).
-* [Slixe](https://github.com/Slixe/), [Nelbert442](https://github.com/Nelbert442), [plspro](https://github.com/plrspro), [LifeTyper](https://github.com/lifetyper), hazet36, ZoZ and every other member of the [DERO community](https://discord.gg/H95TJDp) for always being active and helpful.
-
-## Donations
-__DERO__: dERiY64hDfghSaUCRJN6HuFpfuaQKnPftTfXoBbi7CaLVTFCGdYrPN5iZTWNcqiZkbEVqaGduHt6C2CagHV2SPQdeUeDKueYirQhGykNLZwrug5FHzP2sSFcngdwaxGrX2Ne5GjGc8xrBt
-
-__XMR__: 46LugwCgmfMd9puoXiRzfobaFPHr1do78d6rbxkT32bo2cHX8vu2YRpVnQbyE7LQXzeZLVYmpv2jsQvFs6QirBoAJ4fXEGM
-
-__BTC__: 18RUHsdW3pC9NSJ9g2HeYvNRhbAqyGoeM6
-
-__ETH__: 0x80C5540a865740495AF4569954459E1Bf4EF0dB4
 
 ## Frontend Screenshots
 
